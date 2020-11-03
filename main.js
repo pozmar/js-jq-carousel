@@ -8,6 +8,14 @@ $(".next").click(function(){
   }else{
     imgActiveEl.next().addClass("active");
   }
+  var dotActiveEl = $("i.active");
+  dotActiveEl.removeClass("active");
+
+  if(dotActiveEl.hasClass("last")){
+    $(".first").addClass("active");
+  }else{
+    dotActiveEl.next().addClass("active");
+  }
 })
 //creo funzione per bottone prev
 $(".prev").click(function(){
@@ -19,20 +27,6 @@ $(".prev").click(function(){
   }else{
     imgActiveEl.prev().addClass("active");
   }
-})
-//utilizzo le stesse funzioni per i pallini
-$(".next").click(function(){
-  var dotActiveEl = $("i.active");
-  dotActiveEl.removeClass("active");
-
-  if(dotActiveEl.hasClass("last")){
-    $(".first").addClass("active");
-  }else{
-    dotActiveEl.next().addClass("active");
-  }
-})
-
-$(".prev").click(function(){
   var dotActiveEl = $("i.active");
   dotActiveEl.removeClass("active");
 
@@ -42,3 +36,12 @@ $(".prev").click(function(){
     dotActiveEl.prev().addClass("active");
   }
 })
+
+// $("i").click(function(){
+//
+//   $("i").removeClass("active")
+//   $(this).addClass("active");
+
+
+//
+// })
